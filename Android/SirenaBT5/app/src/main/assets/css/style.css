@@ -1,0 +1,1292 @@
+/* Geniral */
+
+	*
+	{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		outline: none;
+		user-select: none;
+		font-family: inherit;
+	}
+
+	body
+	{
+		font-family: 'Arial';
+		color: black;
+		background-color: white;
+	}
+
+	div.imageLogo
+	{
+		width: 80%;
+		height: 300px;
+		position: fixed;
+		top: 50px;
+		background: url('../image/logo.png') no-repeat top/contain;
+		left: 10%;
+	}
+
+	div.header
+	{
+		width: 100%;
+		height: 64px;
+		background-color: #08785C;
+		font-size: 0;
+		padding: 12px 18px 12px 8px;
+	}
+
+	.buttonMenu
+	{
+		display: inline-block;
+		transition: transform .2s ease;
+		vertical-align: middle;
+	}
+
+	.buttonMenu.select
+	{
+		transform: rotate(-90deg);
+	}
+
+	.headerText
+	{
+		display: inline-block;
+		font-size: 18pt;
+		vertical-align: middle;
+		width: calc(100% - 40px * 2);
+		padding-left: 15px;
+		color: white;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	.headerTextSub
+	{
+		font-style: italic;
+		font-size: 14pt;
+	}
+
+	.headerTextSub:before
+	{
+		content: ' ';
+	}
+
+	.activity
+	{
+		width: 100%;
+		height: calc(100% - 64px);
+		overflow: auto;
+	}
+
+	.menu
+	{
+		position: absolute;
+		/*left: -300px;*/
+		top: 64px;
+		transition: left .2s ease;
+	}
+
+	.menu.show
+	{
+		left: 0 !important;
+	}
+
+	.menuItem
+	{
+		padding: 10px;
+		background-color: #096E97;
+		font-size: 0;
+	}
+
+	.menuItem.select
+	{
+		background-color: #19607B;
+	}
+
+	.menuItem > div
+	{
+		width: 40px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.menuItem > p
+	{
+		display: inline-block;
+		font-size: 18pt;
+		color: white;
+		vertical-align: middle;
+		padding: 0 5px 0 15px;
+	}
+
+	.page
+	{
+		display: none;
+		width: 100%;
+	}
+
+	.page.full
+	{
+		height: 100%;
+	}
+
+	.page.show
+	{
+		display: block;
+	}
+
+	div.waitPage
+	{
+		display: none;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		height: 100%;
+		width: 100%;
+	}
+
+	div.waitPage.show
+	{
+		display: flex;
+	}
+
+	body.mainActivity div.waitPage
+	{
+		position: fixed;
+		left: 0;
+		top: 0;
+		background: rgba(0, 0, 0, 0.5);
+	}
+
+	div.waitPage > div
+	{
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		border: 8px solid #a8efff;
+		animation: wait 1s infinite linear;
+	}
+
+	div.waitPage > div:before
+	{
+		content: '';
+		display: block;
+		background-color: #1941b1;
+		border-radius: 50%;
+		width: 15px;
+		height: 15px;
+		position: relative;
+		left: 2px;
+		top: 2px;
+	}
+
+	@keyframes wait
+	{
+		from { transform: rotate(0deg); }
+		to { transform: rotate(360deg); }
+	}
+
+	div.messagePage
+	{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		height: 100%;
+		width: 100%;
+	}
+
+	div.messagePage > div
+	{
+		padding: 10px 30px;
+	}
+
+	div.messagePage p
+	{
+		font-size: 16pt;
+		text-align: center;
+		color: #444;
+	}
+
+	div.messagePage p.messageHeader
+	{
+		font-size: 18pt;
+		color: red;
+		margin-bottom: 10px;
+	}
+
+	div.messagePage p.messageSerialCode
+	{
+		font-size: 20pt;
+		color: #054fbd;
+		margin-top: 10px;
+	}
+
+	div.messagePage p.messageSerialCode:before
+	{
+		content: '#';
+	}
+
+	div.messagePage button
+	{
+		padding: 30px 10px;
+	}
+
+	div.list
+	{
+		display: none;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		flex-direction: column;
+		align-items: center;
+		overflow: auto;
+		padding: 20px 0;
+	}
+
+	div.list.show
+	{
+		display: flex;
+	}
+
+	div.list > div
+	{
+		width: 80%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	div.list.rows > div
+	{
+		flex-direction: row;
+		flex-flow: wrap;
+		justify-content: center;
+	}
+
+	div.list > div > div
+	{
+		padding: 15px 20px;
+		background-color: white;
+		margin: 2px;
+		font-size: 22pt;
+	}
+
+	div.list.rows > div > div
+	{
+		width: 80px;
+		text-align: center;
+	}
+
+	div.list > div > div > p
+	{
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	div.list div > div.select
+	{
+		background-color: #ffffc0;
+	}
+
+	div.contextMenu
+	{
+		position: absolute;
+		border: 1px solid black;
+		background-color: white;
+		display: none;
+	}
+
+	div.contextMenu.show
+	{
+		display: block;
+	}
+
+	div.contextMenu > div > div
+	{
+		padding: 20px 25px 20px 25px;
+	}
+
+	div.contextMenu > div > div:nth-child(even)
+	{
+		background-color: #f8f8FF;
+	}
+
+	div.message
+	{
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		left: 0;
+		top: 0;
+		background: rgba(0, 0, 0, 0.5);
+		display: none;
+		justify-content: center;
+		align-items: center;
+	}
+
+	div.message.show
+	{
+		display: flex;
+	}
+
+	div.message > p
+	{
+		width: 80%;
+		text-align: center;
+		padding: 20px;
+		background-color: white;
+		word-break: keep-all;
+		font-size: 20pt;
+		font-weight: bold;
+	}
+
+	div.progress
+	{
+		width: 100%;
+		height: 100%;
+		display: none;
+		position: fixed;
+		left: 0;
+		top: 0;
+		align-items: center;
+		justify-content: center;
+		background: rgba(0, 0, 0, 0.5);
+	}
+
+	div.progress.show
+	{
+		display: flex;
+	}
+
+	div.progress > progress
+	{
+		width: 80%;
+		height: 60px;
+	}
+
+	progress.update
+	{
+		display: none;
+		position: absolute;
+		width: 80%;
+		height: 60px;
+		bottom: 20%;
+		left: 10%;
+	}
+
+	progress.update.show
+	{
+		display: block;
+	}
+
+	body:not(.b1513) .hasBuild1513,
+	body:not(.b1590) .hasBuild1590,
+	body.b1590 .hideBuild1590,
+	body:not(.b1722) .hasBuild1722,
+	body:not(.b1778) .hasBuild1778
+	{
+		display: none !important;
+	}
+
+/* /Geniral */
+
+
+
+/* Page Main */
+
+	.page[name=Main].show
+	{
+		display: flex;
+	}
+
+	.page[name=Main]
+	{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.page[name=Main] > div
+	{
+		display: flex;
+		justify-content: center;
+	}
+
+	.page[name=Main] > div > div
+	{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.buttonPlay
+	{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid black;
+		font-weight: bold;
+	}
+
+	.buttonMic
+	{
+		background: black url('../image/mic.png') no-repeat center/contain;
+	}
+
+	.buttonMic.disable
+    {
+		background-color: #999;
+    }
+
+	.buttonPlay,
+	.buttonMic
+	{
+		width: 75%;
+		height: 75%;
+		border-radius: 10%;
+	}
+
+/* /Page Main */
+
+
+
+/* Page MainOption */
+
+	div.page[name=MainOption]
+	{
+		padding-top: 10px;
+	}
+
+	div.mainOption
+	{
+		display: flex;
+		flex-direction: row;
+		justify-content: left;
+		align-items: center;
+	}
+
+	div.mainOption:nth-child(odd)
+	{
+		background: rgba(0,0,192,.03);
+	}
+
+	div.mainEmoji
+	{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 3em;
+		width: 100px;
+		padding: 15px 0;
+	}
+
+	div.mainMelody
+	{
+		font-size: 1.5em;
+		padding-left: 10px;
+		width: calc(100% - 110px);
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	div.mainMelody.strNotFound
+	{
+		color: red;
+	}
+
+/* /Page MainOption */
+
+
+
+/* Page Melody */
+
+	div.page[name=Melody].show
+	{
+		display: flex;
+		flex-direction: column;
+		padding-top: 10px;
+	}
+
+	div.page[name=Melody] > div.loadedMelody
+	{
+		width: 100%;
+		padding: 15px 0 15px 20px;
+		background: rgba(0,0,192,.01);
+	}
+
+	div.page[name=Melody] > div.loadedMelody:nth-child(odd)
+	{
+		background: rgba(0,0,192,.05);
+	}
+
+	div.page[name=Melody] > div.loadedMelody.active
+	{
+		background: rgba(255,0,0,.1);
+	}
+
+	div.page[name=Melody] > div.loadedMelody.played
+	{
+		background: rgba(0,255,0,.1);
+	}
+
+	div.page[name=Melody] > div.loadedMelody > p
+	{
+		display: inline-block;
+		width: calc(100% - 50px);
+		white-space: nowrap;
+		vertical-align: middle;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	div.page[name=Melody] > div.loadedMelody > div
+	{
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+/* /Page Melody */
+
+
+/* Page MelodyAdd */
+
+	div.page[name=MelodyAdd].show
+	{
+		display: flex;
+		flex-direction: column;
+		padding-top: 10px;
+	}
+
+	div.page[name=MelodyAdd] input
+	{
+		display: none;
+	}
+
+	div.page[name=MelodyAdd]> div
+	{
+		background: rgba(0,0,192,.01);
+	}
+
+	div.page[name=MelodyAdd]> div:nth-child(odd)
+	{
+		background: rgba(0,0,192,.03);
+	}
+
+	div.page[name=MelodyAdd] label
+	{
+		display: block;
+		width: 100%;
+		padding: 15px 0 15px 20px;
+	}
+
+	div.page[name=MelodyAdd] label > div:first-child
+	{
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	div.page[name=MelodyAdd] label > p
+	{
+		display: inline-block;
+		width: calc(100% - 100px);
+		white-space: nowrap;
+		vertical-align: middle;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		padding-left: 10px;
+		font-size: 16pt;
+	}
+
+	div.page[name=MelodyAdd] label > p:empty:before
+	{
+		content: '...';
+	}
+
+	div.page[name=MelodyAdd] label > div:last-child
+	{
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	div.page[name=MelodyAdd] input:checked + label
+	{
+		border: 2px solid #ff51db;
+	}
+
+	div.page[name=MelodyAdd] > p
+	{
+		text-align: center;
+		font-size: 16pt;
+		padding-top: 15px;
+	}
+
+/* /Page MelodyAdd */
+
+
+
+/* Page Event */
+
+	div.page[name=Event].show
+	{
+		display: flex;
+		flex-direction: column;
+		padding-top: 10px;
+	}
+
+	div.page[name=Event] > div.configuredEvent
+	{
+		display: flex;
+		align-items: center;
+		width: 100%;
+		padding: 5px 0 5px 5px;
+		background: rgba(0,0,192,.01);
+	}
+
+	div.page[name=Event] > div.configuredEvent:nth-child(odd)
+	{
+		background: rgba(0,0,192,.05);
+	}
+
+	div.page[name=Event] > div.configuredEvent.noPlayAfter
+	{
+		background: rgba(0,0,0,.1);
+	}
+
+	div.page[name=Event] > div.configuredEvent.noPlayAfter:nth-child(odd)
+	{
+		background: rgba(0,0,0,.15);
+	}
+
+	div.page[name=Event] > div.configuredEvent.active
+	{
+		background: rgba(255,0,0,.1);
+	}
+
+	div.page[name=Event] div.left
+	{
+		width: 40px;
+	}
+
+	div.page[name=Event] div.center
+	{
+		width: calc(100% - 90px);
+	}
+
+	div.page[name=Event] div.right
+	{
+		width: 40px;
+	}
+
+	div.page[name=Event] div.channel
+	{
+		width: 22px;
+		height: 22px;
+		border-right: 1px solid black;
+		border-bottom: 1px solid black;
+		margin: 0 auto;
+		font-size: 16px;
+		font-weight: bold;
+	}
+
+	div.page[name=Event] div.channel > div
+	{
+		width: 0;
+		height: 0;
+		border-right: 22px solid transparent;
+		margin-bottom: -100%;
+	}
+
+	div.page[name=Event] div.channel.ch1 > div
+	{
+		border-top: 22px solid yellow;
+	}
+
+	div.page[name=Event] div.channel.ch2 > div
+	{
+		border-top: 22px solid #4f4;
+	}
+
+	div.page[name=Event] div.channel.ch3 > div
+	{
+		border-top: 22px solid orange;
+	}
+
+	div.page[name=Event] div.channel > p
+	{
+		padding: 1px;
+		text-align: center;
+	}
+
+	div.page[name=Event] div.imgOff
+	{
+		visibility: hidden;
+	}
+
+	div.page[name=Event] div.imgOff.show
+	{
+		visibility: visible;
+	}
+
+	div.page[name=Event] p.name
+	{
+		padding-left: 20px;
+		padding-bottom: 5px;
+		font-style: italic;
+		font-size: 11pt;
+	}
+
+	div.page[name=Event] p.type
+	{
+		padding-left: 10px;
+		color: #008;
+		font-weight: bold;
+		font-size: 14pt;
+	}
+
+	div.page[name=Event] p.melody
+	{
+		padding-left: 10px;
+		padding-top: 5px;
+		color: #444;
+		font-weight: bold;
+		font-size: 14pt;
+	}
+
+	div.page[name=Event] p.melody.strNotFound
+	{
+		color: red;
+	}
+
+	div.page[name=Event] p.type
+	{
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+
+/* /Page Event */
+
+
+
+/* Page EventAdd */
+
+	div.page[name=EventAdd]
+	{
+		flex-direction: column;
+		padding: 10px 0;
+		justify-content: center;
+	}
+
+	div.page[name=EventAdd].show
+	{
+		display: flex;
+	}
+
+	div.page[name=EventAdd] div.spoiler
+	{
+		display: none;
+	}
+
+	div.page[name=EventAdd] div.spoiler.show
+	{
+		display: block;
+	}
+
+	div.page[name=EventAdd] div.itemRow,
+	div.page[name=EventAdd] div.itemRow2
+	{
+		display: flex;
+		padding: 5px;
+	}
+
+	div.page[name=EventAdd] div.itemRow > p
+	{
+		width: calc(100% - 180px);
+		padding: 10px 50px 5px 10px;
+		font-size: 11pt;
+		color: #333;
+	}
+
+	div.page[name=EventAdd] div.itemRow > p.bold
+	{
+		font-weight: bold;
+	}
+
+	div.page[name=EventAdd] div.itemRow2 > p
+	{
+		width: calc(100% - 240px);
+		padding: 10px 5px 5px 10px;
+		font-size: 11pt;
+		color: #333;
+	}
+
+	div.page[name=EventAdd] div.itemRow2 > input
+	{
+		width: 220px;
+		font-size: 22pt;
+		padding: 12px 20px;
+		text-align: center;
+		border: 1px solid #999;
+	}
+
+	div.page[name=EventAdd] div.itemRow > input
+	{
+		width: 160px;
+		font-size: 22pt;
+		padding: 12px 20px;
+		text-align: center;
+		border: 1px solid #999;
+	}
+
+	div.page[name=EventAdd] div.itemRow2 > div.itemValue
+	{
+		width: 220px;
+		font-size: 22pt;
+		padding: 12px 20px;
+		text-align: center;
+		border: 1px solid #999;
+		line-height: 1em;
+		min-height: 60px;
+		max-height: calc(3em + 12px * 2);
+		word-break: keep-all;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	div.page[name=EventAdd] div.itemRow2 > div.itemValue.strNotFound
+	{
+		color: red;
+	}
+
+	div.page[name=EventAdd] div.itemRow2 > div.itemValue.ch1
+	{
+		background-color: #fffdba;
+	}
+
+	div.page[name=EventAdd] div.itemRow2 > div.itemValue.ch1:before
+	{
+		content: '1';
+	}
+
+	div.page[name=EventAdd] div.itemRow2 > div.itemValue.ch2
+	{
+		background-color: #baffc6;
+	}
+
+	div.page[name=EventAdd] div.itemRow2 > div.itemValue.ch2:before
+	{
+		content: '2';
+	}
+
+	div.page[name=EventAdd] div.itemRow2 > div.itemValue.ch3
+	{
+		background-color: #ffe3ba;
+	}
+
+	div.page[name=EventAdd] div.itemRow2 > div.itemValue.ch3:before
+	{
+		content: '3';
+	}
+
+	div.page[name=EventAdd] div.itemRow > input[type=checkbox]
+	{
+		display: none;
+	}
+
+	div.page[name=EventAdd] div.itemRow > label
+	{
+		display: block;
+		width: 160px;
+		height: 70px;
+		align-items: center;
+	}
+
+	div.page[name=EventAdd] div.itemRow > label > div
+	{
+		position: relative;
+		left: 20px;
+		top: 5px;
+		width: 60px;
+		height: 60px;
+		background-color: #888;
+		border-radius: 50%;
+		transition: .3s ease;
+	}
+
+	div.page[name=EventAdd] div.itemRow > label > div:before
+	{
+		display: block;
+		content: '';
+		width: 60px;
+		height: 10px;
+		background-color: #333;
+		position: relative;
+		top: 25px;
+		left: 30px;
+		transition: left .3s ease, background-color .3s ease;
+		z-index: -1;
+	}
+
+	div.page[name=EventAdd] div.itemRow > input:checked + label > div
+	{
+		left: 80px;
+		background-color: #0c5;
+	}
+
+	div.page[name=EventAdd] div.itemRow > input:checked + label > div:before
+	{
+		left: -30px;
+		background-color: #363;
+	}
+
+	div.page[name=EventAdd] div.itemRow > input:disabled + label > div
+	{
+		background-color: #555;
+	}
+
+	div.page[name=EventAdd] div.itemRow > input:disabled:checked + label > div
+	{
+		background-color: #092;
+	}
+
+	div.page[name=EventAdd] div.itemRow > input[type=range]
+	{
+		padding: 0;
+		margin: 25px 0;
+	}
+
+/* /Page EventAdd */
+
+
+
+/* Page Option */
+
+	div.page[name=Option]
+	{
+		flex-direction: column;
+		padding-top: 10px;
+		justify-content: center;
+	}
+
+	div.page[name=Option].show
+	{
+		display: flex;
+	}
+
+	div.page[name=Option] div.option
+	{
+		display: flex;
+		padding: 5px;
+	}
+
+	div.page[name=Option] div.option > p
+	{
+		width: calc(100% - 180px);
+		padding: 10px 5px 5px 10px;
+		font-size: 11pt;
+		color: #333;
+	}
+
+	div.page[name=Option] div.option > input
+	{
+		width: 160px;
+		font-size: 22pt;
+		padding: 12px 20px;
+		text-align: center;
+	}
+
+	div.page[name=Option] div.option > input[type=range]
+	{
+		padding: 22px 0;
+	}
+
+	div.page[name=Option] div.option > input[type=checkbox]
+	{
+		display: none;
+	}
+
+	div.page[name=Option] div.option > label
+	{
+		display: block;
+		width: 160px;
+		height: 70px;
+		align-items: center;
+	}
+
+	div.page[name=Option] div.option > label > div
+	{
+		position: relative;
+		left: 20px;
+		top: 5px;
+		width: 60px;
+		height: 60px;
+		background-color: #888;
+		border-radius: 50%;
+		transition: .3s ease;
+	}
+
+	div.page[name=Option] div.option > label > div:before
+	{
+		display: block;
+		content: '';
+		width: 60px;
+		height: 10px;
+		background-color: #333;
+		position: relative;
+		top: 25px;
+		left: 30px;
+		transition: left .3s ease, background-color .3s ease;
+		z-index: -1;
+	}
+
+	div.page[name=Option] div.option > input:checked + label > div
+	{
+		left: 80px;
+		background-color: #0c5;
+	}
+
+	div.page[name=Option] div.option > input:checked + label > div:before
+	{
+		left: -30px;
+		background-color: #363;
+	}
+
+	div.page[name=Option] div.option > input:disabled + label > div
+	{
+		background-color: #555;
+	}
+
+	div.page[name=Option] div.option > input:disabled:checked + label > div
+	{
+		background-color: #092;
+	}
+
+	div.page[name=Option] div.block
+	{
+		display: none;
+	}
+
+	div.page[name=Option] div.block.show
+	{
+		display: block;
+	}
+
+	div.page[name=Option] p.header
+	{
+		padding: 3em 0.5em 2em 0.5em;
+		font-weight: bold;
+	}
+
+	div.page[name=Option] p.header:first-child
+	{
+		padding-top: 0;
+	}
+
+/* /Page Option */
+
+
+
+/* Page PINCode */
+
+	div.page[name=PINCode]
+	{
+		flex-direction: column;
+		padding-top: 10px;
+		align-items: center;
+	}
+
+	div.page[name=PINCode].show
+	{
+		display: flex;
+	}
+
+	div.page[name=PINCode] > input
+	{
+		width: 180px;
+		padding: 10px 0;
+		text-align: center;
+		font-size: 40px;
+		border: 1px solid #555;
+	}
+
+	div.page[name=PINCode] > input.error
+	{
+		background-color: #f88;
+	}
+
+	div.page[name=PINCode] > p
+	{
+		padding: 20px 40px;
+		font-size: 12pt;
+		color: #555;
+	}
+
+/* /Page PINCode */
+
+
+
+/* Page Log */
+
+	div.page[name=Log].show
+	{
+		display: flex;
+		flex-direction: column;
+		padding-top: 10px;
+	}
+
+	div.page[name=Log] > div.logItem
+	{
+		display: flex;
+		align-items: center;
+		width: 100%;
+		padding: 5px 0 5px 5px;
+		background: rgba(0,0,192,.01);
+	}
+
+	div.page[name=Log] > div.logItem:nth-child(odd)
+	{
+		background: rgba(0,0,192,.03);
+	}
+
+	div.page[name=Log] > div.logItem.active
+	{
+		background: rgba(255,0,0,.1);
+	}
+
+	div.page[name=Log] div.left
+	{
+		width: 40px;
+	}
+
+	div.page[name=Log] div.center
+	{
+		width: calc(100% - 90px);
+	}
+
+	div.page[name=Log] div.right
+	{
+		width: 40px;
+	}
+
+	div.page[name=Log] div.channel
+	{
+		width: 22px;
+		height: 22px;
+		border-right: 1px solid black;
+		border-bottom: 1px solid black;
+		margin: 0 auto;
+		font-size: 16px;
+		font-weight: bold;
+	}
+
+	div.page[name=Log] div.channel > div
+	{
+		width: 0;
+		height: 0;
+		border-right: 22px solid transparent;
+		margin-bottom: -100%;
+	}
+
+	div.page[name=Log] div.channel.ch1 > div
+	{
+		border-top: 22px solid yellow;
+	}
+
+	div.page[name=Log] div.channel.ch2 > div
+	{
+		border-top: 22px solid #4f4;
+	}
+
+	div.page[name=Log] div.channel.ch3 > div
+	{
+		border-top: 22px solid orange;
+	}
+
+	div.page[name=Log] div.channel > p
+	{
+		padding: 1px;
+		text-align: center;
+	}
+
+	div.page[name=Log] div.center > p
+	{
+		padding: 20px 0 20px 10px;
+		color: #008;
+		font-weight: bold;
+		font-size: 14pt;
+	}
+
+/* /Page Log */
+
+
+
+/* Page Update */
+	
+	div.page[name=Update].show
+	{
+		display: flex;
+		flex-direction: column;
+		padding-top: 10px;
+		align-items: center;
+	}
+
+	div.page[name=Update] > p[class^=str]
+	{
+		font-size: 22pt;
+		padding: 5px 0;
+		text-align: center;
+	}
+
+	div.page[name=Update] > p.current,
+	div.page[name=Update] > p.update
+	{
+		font-size: 20pt;
+		color: #555;
+		padding: 15px 0;
+		text-align: center;
+	}
+
+	div.page[name=Update] > p.buildInfo
+	{
+		font-size: 12pt;
+		color: black;
+		padding: 1em 0.5em 0 0.5em;
+		text-align: left;
+		white-space: pre-wrap;
+	}
+
+	div.page[name=Update] > select.builds
+	{
+		font-size: 20pt;
+		color: #555;
+		padding: 10px 15px;
+		text-align: center;
+	}
+
+	div.page[name=Update] > button
+	{
+		display: none;
+		margin-top: 15px; 
+		padding: 20px 30px;
+		font-size: 16pt;
+		border: 1px solid #999;
+		background: #dcf0ff;
+	}
+
+	div.page[name=Update] > p.strUpdateWarning
+	{
+		font-size: 12pt;
+		color: red;
+		display: none;
+		padding: 1em 0.5em 0 0.5em;
+	}
+
+	div.page[name=Update] > .show
+	{
+		display: block !important;
+	}
+
+/* /Page Update */

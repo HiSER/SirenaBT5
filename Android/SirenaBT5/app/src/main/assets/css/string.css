@@ -1,0 +1,210 @@
+[class*=str]:before
+{
+	/*content: '<empty string>';*/
+}
+
+/* Russian */
+
+	html[lang=ru] .strAttr:before					{ content: attr(string); }
+	html[lang=ru] .strMain:before					{ content: 'Главная'; }
+	html[lang=ru] .strMainOption:before				{ content: 'Кнопки'; }
+	html[lang=ru] .strMelody:before					{ content: 'Мелодии'; }
+	html[lang=ru] .strMelodyAdd:before				{ content: 'Добавить мелодию'; }
+	html[lang=ru] .strEvent:before					{ content: 'События'; }
+	html[lang=ru] .strEventAdd:before				{ content: 'Добавить событие'; }
+	html[lang=ru] .strEventEdit:before				{ content: 'Изменить событие'; }
+	html[lang=ru] .strOption:before					{ content: 'Конфигурации'; }
+	html[lang=ru] .strLog:before					{ content: 'Журнал'; }
+	html[lang=ru] .strUpdate:before					{ content: 'Обновление'; }
+	html[lang=ru] .strUpdateButton:before			{ content: 'Обновить'; }
+	html[lang=ru] .strNotFound:before				{ content: 'Неизвестная'; }
+	html[lang=ru] .strNoSelect:before				{ content: 'Мелодия не выбрана'; }
+	html[lang=ru] .strPress:before					{ content: 'Удержание'; }
+	html[lang=ru] .strPulse:before					{ content: 'Импульсы'; }
+	html[lang=ru] .strCyclic:before					{ content: 'Цикличный'; }
+	html[lang=ru] .strPressMax:before				{ content: 'Максимальная ширина импульса'; }
+	html[lang=ru] .strIdleMax:before				{ content: 'Минимальный период импульсов'; }
+	html[lang=ru] .strPulsesMax:before				{ content: 'Максимальное кол-во импульсов'; }
+	html[lang=ru] .strDeviation:before				{ content: 'Допуск ширины импульса'; }
+	html[lang=ru] .strCHButton:before				{ content: 'Режим кнопки'; }
+	html[lang=ru] .strCHMeasure:before				{ content: 'Режим измерений'; }
+	html[lang=ru] .strPINCode:before				{ content: 'PIN код BlueTooth'; }
+	html[lang=ru] .strPINCodeDesc:before			{ content: 'Введите 4 цифры'; }
+	html[lang=ru] .strErrorPIN:before				{ content: 'Не удалось изменить PIN'; }
+	html[lang=ru] .strSavedConfig:before			{ content: 'Конфигурации сохранены'; }
+	html[lang=ru] .strSavedFS:before				{ content: 'Мелодии и события сохранены'; }
+	html[lang=ru] .strChannel:before				{ content: 'Канал'; }
+	html[lang=ru] .strName:before					{ content: 'Название'; }
+	html[lang=ru] .strEventType:before				{ content: 'Тип события'; }
+	html[lang=ru] .strPoweroff:before				{ content: 'Уходить в дежурный режим, после воспроизведения'; }
+	html[lang=ru] .strTypePulse1:before				{ content: 'Вид импульса №1'; }
+	html[lang=ru] .strTypePulse2:before				{ content: 'Вид импульса №2'; }
+	html[lang=ru] .strTypePulse3:before				{ content: 'Вид импульса №3'; }
+	html[lang=ru] .strWidth:before					{ content: 'Ширина'; }
+	html[lang=ru] .strCount:before					{ content: 'Количество'; }
+	html[lang=ru] .strEventLimit:before				{ content: 'Достигнут лимит кол-во событий'; }
+	html[lang=ru] .strMelodyLimit:before			{ content: 'Достигнут лимит кол-во мелодий'; }
+	html[lang=ru] .strClear:before					{ content: 'Очистить'; }
+	html[lang=ru] .strSaveFS:before					{ content: 'Сохранить мелодии и события'; }
+	html[lang=ru] .strSaveConfig:before				{ content: 'Сохранить конфигурации'; }
+	html[lang=ru] .strDelete:before					{ content: 'Удалить'; }
+	html[lang=ru] .strPlay:before					{ content: 'Воспроисвести'; }
+	html[lang=ru] .strChange:before					{ content: 'Изменить'; }
+	html[lang=ru] .strRelease:before				{ content: 'Не активен'; }
+	html[lang=ru] .strMeasure:before				{ content: 'Измерение'; }
+	html[lang=ru] .strMeasureError:before			{ content: 'Ошибка измерений'; }
+	html[lang=ru] .strSetConfig:before				{ content: 'Измерения установлены'; }
+	html[lang=ru] .strCurrentVersion:before			{ content: 'Версия в сирене'; }
+	html[lang=ru] .strUpdateVersion:before			{ content: 'Текущая версия'; }
+	html[lang=ru] .strUpdateCheck:before			{ content: '... проверка ...'; }
+	html[lang=ru] .strUpdateCheckError:before		{ content: 'Проверьте подключение к интернету'; }
+	html[lang=ru] .strUpdateLoadError:before		{ content: 'Не удалось скачать обновление'; }
+	html[lang=ru] .strUpdateLoadBad:before			{ content: 'Обновление испорчено'; }
+	html[lang=ru] .strUpdateWarning:before			{ content: '* Перед обновлением измените пин-код на стандартный "0000", перезагрузите сирену (отключением питания или уходом в дежурный режим, приложение нужно закрыть) и пересопрягите устройство. Если при обновлении произойдёт сбой, то восстановить работу сирены, возможно будет только с помощью программы обновления для ПК (описание в архиве с программой).'; }
+	html[lang=ru] .strUpdateIsSame:before			{ content: 'Обновление уже установлено'; }
+	html[lang=ru] .strDownloadFiles:before			{ content: 'Загруженные'; }
+	html[lang=ru] .strErrorPlay:before				{ content: 'Не удалось воспроизвести мелодию'; }
+	html[lang=ru] .strErrorLoad:before				{ content: 'Не удалось загрузить мелодию'; }
+	html[lang=ru] .strConfigCH0:before				{ content: 'Канал №1'; }
+	html[lang=ru] .strConfigCH1:before				{ content: 'Канал №2'; }
+	html[lang=ru] .strConfigCH2:before				{ content: 'Канал №3'; }
+	html[lang=ru] .strPlayOnce:before				{ content: 'Воспроизводить один раз'; }
+	html[lang=ru] .strPlayToEnd:before				{ content: 'Воспроизводить до конца'; }
+	html[lang=ru] .strNoWidth:before				{ content: 'Не определять ширину импульса'; }
+	html[lang=ru] .strVolume:before					{ content: 'Громкость'; }
+	html[lang=ru] .strCHNoBounceHigh:before			{ content: 'Не фильтровать'; }
+	html[lang=ru] .strNoPlayAfter:before			{ content: 'Пропустить после'; }
+	html[lang=ru] .strNoPlayAfterNull:before		{ content: '-'; }
+	html[lang=ru] .strVolumePlay:before				{ content: 'Громкость воспроизведения'; }
+	html[lang=ru] .strVolumeBeep:before				{ content: 'Громкость стандартного звука'; }
+	html[lang=ru] .strSleep:before					{ content: 'Включить дежурный режим'; }
+	html[lang=ru] .strUpdate1777:before				{ content: 'Установите новое обновление!'; }
+	html[lang=ru] .strCHStandard:before				{ content: 'Воспроизводить стандартный звук'; }
+
+	/* Message page */
+
+		html[lang=ru] .strReconnect:before				{ content: 'Переподключить'; }
+		html[lang=ru] .strBTSettings:before				{ content: 'Настройки BlueTooth'; }
+		html[lang=ru] .strErrorFS:before				{ content: 'Ошибка файловой системы'; }
+		html[lang=ru] .strErrorFSDesc:before			{ content: 'Возможно плохой контакт или неисправность micro SD карты'; }
+		html[lang=ru] .strDeviceNotFound:before			{ content: 'Сирена не найдена'; }
+		html[lang=ru] .strDeviceNotFoundDesc:before		{ content: 'Сопрягите сирену со смартфоном'; }
+		html[lang=ru] .strAdapterNotFound:before		{ content: 'В смартфоне отсутствует BlueTooth'; }
+		html[lang=ru] .strAdapterNotFoundDesc:before	{ content: ''; }
+		html[lang=ru] .strAdapterOff:before				{ content: 'BlueTooth отключен'; }
+		html[lang=ru] .strAdapterOffDesc:before			{ content: 'Требуется влючить BlueTooth'; }
+		html[lang=ru] .strDeviceError:before			{ content: 'Ошибка обмена данных'; }
+		html[lang=ru] .strDeviceErrorDesc:before		{ content: 'Убедитесь, что сирена не в дежурном режиме. Или попробуйте переподключить, или пересопрягите сирену'; }
+		html[lang=ru] .strSerialError:before			{ content: 'Поддельное устройство!'; }
+		html[lang=ru] .strSerialErrorDesc:before		{ content: 'Вы приобрели поддельное устройство, если это сообщение получили по ошибке, обратитесь по контактам на официальном сайте и сообщите код ошибки. '; }
+		html[lang=ru] .strInternetError:before			{ content: 'Нет подключения к интернету!'; }
+		html[lang=ru] .strInternetErrorDesc:before		{ content: 'Проверьте соединение с интернетом, приложению требуется доступ к сайту.'; }
+        html[lang=ru] .strBuildError:before             { content: 'Версия ниже 1777, больше не поддерживается!'; }
+        html[lang=ru] .strBuildErrorDesc:before         { content: 'Обновите сирену, через приложение для ноутбука, подробнее на сайте '; }
+
+	/* /Message page */
+
+/* /Russian */
+
+/* English */
+
+	html[lang=en] .strAttr:before					{ content: attr(string); }
+	html[lang=en] .strMain:before					{ content: 'Main'; }
+	html[lang=en] .strMainOption:before				{ content: 'Buttons'; }
+	html[lang=en] .strMelody:before					{ content: 'Melody'; }
+	html[lang=en] .strMelodyAdd:before				{ content: 'Add Melody'; }
+	html[lang=en] .strEvent:before					{ content: 'Events'; }
+	html[lang=en] .strEventAdd:before				{ content: 'Add Event'; }
+	html[lang=en] .strEventEdit:before				{ content: 'Edit Event'; }
+	html[lang=en] .strOption:before					{ content: 'Config'; }
+	html[lang=en] .strLog:before					{ content: 'Log'; }
+	html[lang=en] .strUpdate:before					{ content: 'Update'; }
+	html[lang=en] .strUpdateButton:before			{ content: 'Start'; }
+	html[lang=en] .strNotFound:before				{ content: 'Unknown'; }
+	html[lang=en] .strNoSelect:before				{ content: 'No selected'; }
+	html[lang=en] .strPress:before					{ content: 'Press'; }
+	html[lang=en] .strPulse:before					{ content: 'Pulses'; }
+	html[lang=en] .strCyclic:before					{ content: 'Cyclic'; }
+	html[lang=en] .strPressMax:before				{ content: 'Maximum pulse width'; }
+	html[lang=en] .strIdleMax:before				{ content: 'Minimum period pulses'; }
+	html[lang=en] .strPulsesMax:before				{ content: 'Maximum count pulses'; }
+	html[lang=en] .strDeviation:before				{ content: 'Deviation width pulse'; }
+	html[lang=en] .strCHButton:before				{ content: 'Button mode'; }
+	html[lang=en] .strCHMeasure:before				{ content: 'Measure mode'; }
+	html[lang=en] .strPINCode:before				{ content: 'PIN code BlueTooth'; }
+	html[lang=en] .strPINCodeDesc:before			{ content: 'Enter 4 numbers'; }
+	html[lang=en] .strErrorPIN:before				{ content: 'Failed to change PIN code'; }
+	html[lang=en] .strSavedConfig:before			{ content: 'Config saved'; }
+	html[lang=en] .strSavedFS:before				{ content: 'Melodys and events saved'; }
+	html[lang=en] .strChannel:before				{ content: 'Channel'; }
+	html[lang=en] .strName:before					{ content: 'Name'; }
+	html[lang=en] .strEventType:before				{ content: 'Event type'; }
+	html[lang=en] .strPoweroff:before				{ content: 'Go into sleep mode after playback'; }
+	html[lang=en] .strTypePulse1:before				{ content: 'Pulse type #1'; }
+	html[lang=en] .strTypePulse2:before				{ content: 'Pulse type #2'; }
+	html[lang=en] .strTypePulse3:before				{ content: 'Pulse type #3'; }
+	html[lang=en] .strWidth:before					{ content: 'Width'; }
+	html[lang=en] .strCount:before					{ content: 'Count'; }
+	html[lang=en] .strEventLimit:before				{ content: 'Events limit reached'; }
+	html[lang=en] .strMelodyLimit:before			{ content: 'Melodys limit reached'; }
+	html[lang=en] .strClear:before					{ content: 'Clear'; }
+	html[lang=en] .strSaveFS:before					{ content: 'Save melodys ad events'; }
+	html[lang=en] .strSaveConfig:before				{ content: 'Save config'; }
+	html[lang=en] .strDelete:before					{ content: 'Delete'; }
+	html[lang=en] .strPlay:before					{ content: 'Play'; }
+	html[lang=en] .strChange:before					{ content: 'Edit'; }
+	html[lang=en] .strRelease:before				{ content: 'released'; }
+	html[lang=en] .strMeasure:before				{ content: 'Measure'; }
+	html[lang=en] .strMeasureError:before			{ content: 'Fail Measure'; }
+	html[lang=en] .strSetConfig:before				{ content: 'Measurements is set'; }
+	html[lang=en] .strCurrentVersion:before			{ content: 'Build in siren'; }
+	html[lang=en] .strUpdateVersion:before			{ content: 'Current build'; }
+	html[lang=en] .strUpdateCheck:before			{ content: '... checking ...'; }
+	html[lang=en] .strUpdateCheckError:before		{ content: 'Check your internet connection'; }
+	html[lang=en] .strUpdateLoadError:before		{ content: 'Failed to download update'; }
+	html[lang=en] .strUpdateLoadBad:before			{ content: 'Update is bad'; }
+	html[lang=en] .strUpdateWarning:before			{ content: '* Before updating, change the PIN code to the standard "0000", reboot the siren (by turning off the power or going into sleep mode, the application must be closed) and re-pair the device. If the update fails, it will be possible to restore the operation of the siren only with the help of the update program for the PC (description in the archive with the program).'; }
+	html[lang=en] .strUpdateIsSame:before			{ content: 'The update is already installed'; }
+	html[lang=en] .strDownloadFiles:before			{ content: 'Downloads'; }
+	html[lang=en] .strErrorPlay:before				{ content: 'Failed to play the melody'; }
+	html[lang=en] .strErrorLoad:before				{ content: 'Failed to load melody'; }
+	html[lang=en] .strConfigCH0:before				{ content: 'Channel #1'; }
+	html[lang=en] .strConfigCH1:before				{ content: 'Channel #2'; }
+	html[lang=en] .strConfigCH2:before				{ content: 'Channel #3'; }
+	html[lang=en] .strPlayOnce:before				{ content: 'Play once'; }
+	html[lang=en] .strPlayToEnd:before				{ content: 'Play to end'; }
+	html[lang=en] .strNoWidth:before				{ content: 'Do not difine width'; }
+	html[lang=en] .strVolume:before					{ content: 'Playback volume'; }
+	html[lang=en] .strCHNoBounceHigh:before			{ content: 'Do not filtered'; }
+	html[lang=en] .strNoPlayAfter:before			{ content: 'Skip after'; }
+	html[lang=en] .strNoPlayAfterNull:before		{ content: '-'; }
+	html[lang=en] .strVolumePlay:before				{ content: 'Volume melody playback'; }
+	html[lang=en] .strVolumeBeep:before				{ content: 'Volume Standard sound'; }
+	html[lang=en] .strSleep:before					{ content: 'Turn on sleep mode'; }
+	html[lang=en] .strUpdate1777:before				{ content: 'Install the new update!'; }
+	html[lang=en] .strCHStandard:before				{ content: 'Playing standard sound'; }
+
+	/* Message page */
+
+		html[lang=en] .strReconnect:before				{ content: 'Reconnect'; }
+		html[lang=en] .strBTSettings:before				{ content: 'BlueTooth config'; }
+		html[lang=en] .strErrorFS:before				{ content: 'Filesystem error'; }
+		html[lang=en] .strErrorFSDesc:before			{ content: 'Possible poor contact or malfunction of the micro SD card'; }
+		html[lang=en] .strDeviceNotFound:before			{ content: 'Not found siren'; }
+		html[lang=en] .strDeviceNotFoundDesc:before		{ content: 'Do pair siren with smartphone'; }
+		html[lang=en] .strAdapterNotFound:before		{ content: 'Not found BlueTooth adapter'; }
+		html[lang=en] .strAdapterNotFoundDesc:before	{ content: ''; }
+		html[lang=en] .strAdapterOff:before				{ content: 'BlueTooth is turn off'; }
+		html[lang=en] .strAdapterOffDesc:before			{ content: 'Do turn on BlueTooth'; }
+		html[lang=en] .strDeviceError:before			{ content: 'Fail I/O'; }
+		html[lang=en] .strDeviceErrorDesc:before		{ content: 'Make sure the siren is not in sleep mode. Or try to reconnect or re-pair the siren'; }
+		html[lang=en] .strSerialError:before			{ content: 'Fake device!'; }
+		html[lang=en] .strSerialErrorDesc:before		{ content: 'You have purchased a fake device, if you received this message by mistake, contact the contacts on the official website and report the error code. '; }
+		html[lang=en] .strInternetError:before			{ content: 'No internet connection!'; }
+		html[lang=en] .strInternetErrorDesc:before		{ content: 'Check your internet connection, the application requires access to the website.'; }
+        html[lang=en] .strBuildError:before             { content: 'Version below 1777, no longer supported!'; }
+        html[lang=en] .strBuildErrorDesc:before         { content: 'Update the siren via laptop app, see website for details '; }
+
+	/* /Message page */
+
+/* /English */

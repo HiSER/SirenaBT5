@@ -1,0 +1,36 @@
+[class*=img]:before
+{
+	display: block;
+	content: '';
+	font-size: 0;
+	width: 40px;
+	height: 40px;
+	background: no-repeat center/contain;
+}
+
+.imgAdd:before		{ background-image: url('../image/add.png'); }
+.imgAdd2:before		{ background-image: url('../image/add2.png'); }
+.imgBack:before		{ background-image: url('../image/back.png'); }
+.imgEdit:before		{ background-image: url('../image/edit.png'); }
+.imgEdit2:before	{ background-image: url('../image/edit2.png'); }
+.imgEvent:before	{ background-image: url('../image/event.png'); }
+.imgLog:before		{ background-image: url('../image/log.png'); }
+.imgMain:before		{ background-image: url('../image/main.png'); }
+.imgMelody:before	{ background-image: url('../image/melody.png'); }
+.imgMelody2:before	{ background-image: url('../image/melody2.png'); }
+.imgMenu:before		{ background-image: url('../image/menu.png'); }
+.imgMic:before		{ background-image: url('../image/mic.png'); }
+.imgOption:before	{ background-image: url('../image/option.png'); }
+.imgPause:before	{ background-image: url('../image/pause.png'); }
+.imgPause2:before	{ background-image: url('../image/pause2.png'); }
+.imgPlay:before		{ background-image: url('../image/play.png'); }
+.imgPlay2:before	{ background-image: url('../image/play2.png'); }
+.imgSubmenu:before	{ background-image: url('../image/submenu.png'); }
+.imgSubmenu2:before	{ background-image: url('../image/submenu2.png'); }
+.imgUpdate:before	{ background-image: url('../image/update.png'); }
+.imgOk:before		{ background-image: url('../image/ok.png'); }
+.imgOff:before		{ background-image: url('../image/off.png'); }
+.imgCatalog:before	{ background-image: url('../image/catalog.png'); }
+.imgCatalog2:before	{ background-image: url('../image/catalog2.png'); }
+.imgLoad:before		{ background-image: url('../image/load.png'); }
+

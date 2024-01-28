@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>SirenaBT</title>
+		<link rel="stylesheet" href="./css/style.css">
+		<link rel="stylesheet" href="./css/string.css">
+		<link rel="stylesheet" href="./css/image.css">
+		<!--<script src="./js/config.js"></script>-->
+		<script src="./js/add.js"></script>
+		<script src="./js/lib.js"></script>
+		<style id="styleMenu"></style>
+	</head>
+	<body class="mainActivity" default="Main">
+		<div class="header">
+			<div class="buttonMenu imgMenu" id="buttonMenu" onclick="ui.onClickMenu()"></div>
+			<p class="headerText strMain"><span class="headerTextSub"></span></p>
+			<div class="buttonMenu" id="buttonSubmenu" onclick="ui.onClickSubmenu.call(this, event)"></div>
+		</div>
+		<div class="activity">
+
+			<div class="page full" name="Main" submenu="Option" topage="MainOption">
+				<div>
+					<div><div class="buttonPlay" id="button0" ontouchstart="ui.onPlay(0)"></div></div>
+					<div><div class="buttonPlay" id="button1" ontouchstart="ui.onPlay(1)"></div></div>
+					<div><div class="buttonPlay" id="button2" ontouchstart="ui.onPlay(2)"></div></div>
+				</div>
+				<div>
+					<div><div class="buttonPlay" id="button3" ontouchstart="ui.onPlay(3)"></div></div>
+					<div><div class="buttonPlay" id="button4" ontouchstart="ui.onPlay(4)"></div></div>
+					<div><div class="buttonPlay" id="button5" ontouchstart="ui.onPlay(5)"></div></div>
+				</div>
+				<div>
+					<div><div class="buttonPlay" id="button6" ontouchstart="ui.onPlay(6)"></div></div>
+					<div><div class="buttonPlay" id="button7" ontouchstart="ui.onPlay(7)"></div></div>
+					<div><div class="buttonMic" id="buttonMic" ontouchstart="ui.onSpeakStart()"  ontouchend="ui.onSpeakStop()"></div></div>
+				</div>
+			</div>
+
+			<div class="page" name="MainOption" menu="Back" back="Main" submenu="Ok" onshow="ui.updateMainOption()">
+				<!--<div class="mainOption">
+					<div class="mainEmoji">&#128512;</div>
+					<div class="mainMelody strNotFound"></div>
+				</div>-->
+			</div>
+
+			<div class="page" name="Melody" submenu="Add" topage="MelodyAdd" onshow="ui.headerTextSubMelodyTotal()">
+				<!--<div id="melody0" class="loadedMelody">
+					<p>name</p>
+					<div class="imgSubmenu2"></div>
+				</div>-->
+			</div>
+
+			<div class="page" name="MelodyAdd" menu="Back" back="Melody" onshow="ui.updateMelodyAdd()">
+				<!--<label class="odd">
+					<div class="imgCatalog2"></div>
+					<p></p>
+				</label>
+				<input type="radio" name="melody" id="melodyAdd0">
+				<label for="melodyAdd0">
+					<div class="imgMelody2"></div>
+					<p>melody0</p>
+					<div class="imgPlay2"></div>
+				</label>
+				<input type="radio" name="melody" id="melodyAdd1">
+				<label for="melodyAdd1" class="odd">
+					<div class="imgMelody2"></div>
+					<p>melody1</p>
+					<div class="imgPlay2"></div>
+				</label>
+				<input type="radio" name="melody" id="melodyAdd2">
+				<label for="melodyAdd2">
+					<div class="imgMelody2"></div>
+					<p>melody2</p>
+					<div class="imgPlay2"></div>
+				</label>-->
+			</div>
+
+			<div class="page" name="Event" submenu="Add" topage="EventAdd" onshow="ui.updateEvent()">
+				<!--<div id="event0" class="configuredEvent">
+					<div class="left">
+						<div class="channel ch3">
+							<div></div>
+							<p>1</p>
+						</div>
+						<div class="imgOff show"></div>
+					</div>
+					<div class="center">
+						<p class="type strCyclic"></p>
+						<p class="melody">test</p>
+					</div>
+					<div class="right imgSubmenu2"></div>
+				</div>-->
+			</div>
+
+			<div class="page" name="EventAdd" submenu="Ok" menu="Back" back="Event" onshow="ui.updateEventAdd()">
+				<div class="itemRow2">
+					<p class="strName"></p><input id="eventName" type="text" class="itemName" maxlength="32">
+				</div>
+				<div class="itemRow2">
+					<p class="strChannel"></p><div id="eventChannel" class="itemValue" onclick="ui.eventSelectChannel()"></div>					
+				</div>
+				<div class="itemRow2">
+					<p class="strEventType"></p><div id="eventType" class="itemValue" onclick="ui.eventSelectType()"></div>
+				</div>
+				<div class="itemRow2">
+					<p class="strMelody"></p><div id="eventMelody" class="itemValue" onclick="ui.eventSelectMelody()"></div>
+				</div>
+				<div class="itemRow2 hasBuild1590">
+					<p class="strNoPlayAfter"></p><div id="eventNoPlayAfter" class="itemValue" onclick="ui.eventSelectNoPlayAfter()"></div>
+				</div>
+				<div class="itemRow">
+					<p class="strPoweroff"></p><input id="eventPoweroff" type="checkbox"><label for="eventPoweroff"><div></div></label>
+				</div>
+				<div class="itemRow hasBuild1513">
+					<p class="strVolume"></p><input id="eventVolume" type="range" min="1" max="10" step="1">
+				</div>
+				<div id="eventPulses1" class="spoiler">
+					<div class="itemRow">
+						<p class="strTypePulse1 bold"></p>
+					</div>
+					<div class="itemRow">
+						<p class="strWidth"></p><input id="eventWidth1" type="number" min="1" max="2000">
+					</div>
+					<div class="itemRow">
+						<p class="strCount"></p><input id="eventCount1" type="number" min="1" max="20">
+					</div>
+					<div class="itemRow">
+						<p class="strTypePulse2 bold"></p><input id="eventTypePulse2" type="checkbox" onchange="ui.setEventTypePulse2(this.checked)"><label for="eventTypePulse2"><div></div></label>
+					</div>
+					<div id="eventPulses2" class="spoiler">
+						<div class="itemRow">
+							<p class="strWidth"></p><input id="eventWidth2" type="number" min="1" max="2000">
+						</div>
+						<div class="itemRow">
+							<p class="strCount"></p><input id="eventCount2" type="number" min="1" max="20">
+						</div>
+						<div class="itemRow hideBuild1590">
+							<p class="strTypePulse3 bold"></p><input id="eventTypePulse3" type="checkbox" onchange="ui.setEventTypePulse3(this.checked)"><label for="eventTypePulse3"><div></div></label>
+						</div>
+						<div id="eventPulses3" class="spoiler">
+							<div class="itemRow">
+								<p class="strWidth"></p><input id="eventWidth3" type="number" min="1" max="2000">
+							</div>
+							<div class="itemRow">
+								<p class="strCount"></p><input id="eventCount3" type="number" min="1" max="20">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="page" name="Option" submenu="Submenu">
+				<div class="option hasBuild1722">
+					<p class="strVolumePlay"></p><input min="1" max="10" step="1" id="cfgVolume" type="range" onchange="ui.setConfig.call(this)">
+				</div>
+				<div class="option hasBuild1722">
+					<p class="strVolumeBeep"></p><input min="1" max="10" step="1" id="cfgVolumeBeep" type="range" onchange="ui.setConfig.call(this)">
+				</div>
+				<div class="option hasBuild1722">
+					<p class="strSleep"></p><input id="cfgSleep" type="checkbox" onchange="ui.setConfig.call(this)"><label for="cfgSleep"><div></div></label>
+				</div>
+				<p class="header strConfigCH0"></p>
+				<div class="option">
+					<p class="strPressMax"></p><input id="ch0PressMax" type="number" min="1" max="2000" onchange="ui.setConfig.call(this)" onkeydown="ui.setConfig.call(this, event)">
+				</div>
+				<div class="option">
+					<p class="strIdleMax"></p><input id="ch0IdleMax" type="number" min="1" max="2000" onchange="ui.setConfig.call(this)" onkeydown="ui.setConfig.call(this, event)">
+				</div>
+				<div class="option">
+					<p class="strPulsesMax"></p><input id="ch0PulsesMax" type="number" min="1" max="20" onchange="ui.setConfig.call(this)" onkeydown="ui.setConfig.call(this, event)">
+				</div>
+				<div class="option">
+					<p class="strDeviation"></p><input id="ch0Deviation" type="number" min="1" max="50" onchange="ui.setConfig.call(this)" onkeydown="ui.setConfig.call(this, event)">
+				</div>
+				<div class="option">
+					<p class="strCHButton"></p><input id="ch0CHButton" type="checkbox" onchange="ui.setConfig.call(this)"><label for="ch0CHButton"><div></div></label>
+				</div>
+				<div class="option">
+					<p class="strCHMeasure"></p><input id="ch0CHMeasure" type="checkbox" onchange="ui.setConfig.call(this)"><label for="ch0CHMeasure"><div></div></label>
+				</div>
+				<div class="block" id="options1331">
+					<div class="option">
+						<p class="strPlayOnce"></p><input id="ch0PlayOnce" type="checkbox" onchange="ui.setConfig.call(this)"><label for="ch0PlayOnce"><div></div></label>
+					</div>
+					<div class="option">
+						<p class="strPlayToEnd"></p><input id="ch0PlayToEnd" type="checkbox" onchange="ui.setConfig.call(this)"><label for="ch0PlayToEnd"><div></div></label>
+					</div>
+					<div class="option">
+						<p class="strNoWidth"></p><input id="ch0NoWidth" type="checkbox" onchange="ui.setConfig.call(this)"><label for="ch0NoWidth"><div></div></label>
+					</div>
+					<div class="option hasBuild1513">
+						<p class="strCHNoBounceHigh"></p><input id="ch0NoBounceHigh" type="checkbox" onchange="ui.setConfig.call(this)"><label for="ch0NoBounceHigh"><div></div></label>
+					</div>
+					<div class="option hasBuild1778">
+						<p class="strCHStandard"></p><input id="ch0Standard" type="checkbox" onchange="ui.setConfig.call(this)"><label for="ch0Standard"><div></div></label>
+					</div>
+					<p class="header strConfigCH1"></p>
+					<div class="option hasBuild1778">
+					<p class="strPressMax"></p><input id="ch1PressMax" type="number" min="1" max="2000" onchange="ui.setConfig.call(this)" onkeydown="ui.setConfig.call(this, event)">
+					</div>
+					<div class="option hasBuild1778">
+						<p class="strIdleMax"></p><input id="ch1IdleMax" type="number" min="1" max="2000" onchange="ui.setConfig.call(this)" onkeydown="ui.setConfig.call(this, event)">
+					</div>
+					<div class="option hasBuild1778">
+						<p class="strPulsesMax"></p><input id="ch1PulsesMax" type="number" min="1" max="20" onchange="ui.setConfig.call(this)" onkeydown="ui.setConfig.call(this, event)">
+					</div>
+					<div class="option hasBuild1778">
+						<p class="strDeviation"></p><input id="ch1Deviation" type="number" min="1" max="50" onchange="ui.setConfig.call(this)" onkeydown="ui.setConfig.call(this, event)">
+					</div>
+					<div class="option">
+						<p class="strCHButton"></p><input id="ch1CHButton" type="checkbox" onchange="ui.setConfig.call(this)"><label for="ch1CHButton"><div></div></label>
+					</div>
+					<div class="option hasBuild1778">
+						<p class="strCHMeasure"></p><input id="ch1CHMeasure" type="checkbox" onchange="ui.setConfig.call(this)"><label for="ch1CHMeasure"><div></div></label>
+					</div>
+					<div class="option">
+						<p class="strPlayOnce"></p><input id="ch1PlayOnce" type="checkbox" onchange="ui.setConfig.call(this)"><label for="ch1PlayOnce"><div></div></label>
+					</div>
+					<div class="option">
+						<p class="strPlayToEnd"></p><input id="ch1PlayToEnd" type="checkbox" onchange="ui.setConfig.call(this)"><label for="ch1PlayToEnd"><div></div></label>
+					</div>
+					<div class="option hasBuild1778">
+						<p class="strNoWidth"></p><input id="ch1NoWidth" type="checkbox" onchange="ui.setConfig.call(this)"><label for="ch1NoWidth"><div></div></label>
+					</div>
+					<div class="option hasBuild1778">
+						<p class="strCHNoBounceHigh"></p><input id="ch1NoBounceHigh" type="checkbox" onchange="ui.setConfig.call(this)"><label for="ch1NoBounceHigh"><div></div></label>
+					</div>
+					<div class="option hasBuild1778">
+						<p class="strCHStandard"></p><input id="ch1Standard" type="checkbox" onchange="ui.setConfig.call(this)"><label for="ch1Standard"><div></div></label>
+					</div>
+					<p class="header strConfigCH2"></p>
+					<div class="option">
+						<p class="strCHButton"></p><input id="ch2CHButton" type="checkbox" onchange="ui.setConfig.call(this)"><label for="ch2CHButton"><div></div></label>
+					</div>
+					<div class="option">
+						<p class="strPlayOnce"></p><input id="ch2PlayOnce" type="checkbox" onchange="ui.setConfig.call(this)"><label for="ch2PlayOnce"><div></div></label>
+					</div>
+					<div class="option">
+						<p class="strPlayToEnd"></p><input id="ch2PlayToEnd" type="checkbox" onchange="ui.setConfig.call(this)"><label for="ch2PlayToEnd"><div></div></label>
+					</div>
+				</div>
+			</div>
+
+			<div class="page" name="PINCode" submenu="Ok" menu="Back" back="Option">
+				<input id="PINCode" type="text" onfocus="this.classList.remove('error')">
+				<p class="strPINCodeDesc"></p>
+			</div>
+
+			<div class="page" name="Log" submenu="Submenu">
+				<!--<div class="logItem">
+					<div class="left">
+						<div class="channel ch3">
+							<div></div>
+							<p>3</p>
+						</div>
+					</div>
+					<div class="center">
+						<p class="strNotFound"></p>
+					</div>
+					<div class="right imgAdd2"></div>
+				</div>-->
+			</div>
+			
+			<div class="page" name="Update" onshow="ui.updateUpdate()">
+				<p class="strCurrentVersion"></p>
+				<p class="current"></p>
+				<p class="strUpdateVersion"></p>
+				<p class="update strUpdateCheck"></p>
+				<select class="builds" onchange="ui.updateSelectChange()"></select>
+				<p class="buildInfo"></p>
+				<button class="strUpdateButton" onclick="ui.updateStart()"></button>
+				<p class="strUpdateWarning"></p>
+			</div>
+		</div>
+		<div class="menu">
+			<div class="menuItem" name="Main" onclick="ui.onClickMenuItem(this, event)"><div class="imgMain"></div><p class="strMain"></p></div>
+			<div class="menuItem" name="Melody" onclick="ui.onClickMenuItem(this, event)"><div class="imgMelody"></div><p class="strMelody"></p></div>
+			<div class="menuItem" name="Event" onclick="ui.onClickMenuItem(this, event)"><div class="imgEvent"></div><p class="strEvent"></p></div>
+			<div class="menuItem" name="Option" onclick="ui.onClickMenuItem(this, event)"><div class="imgOption"></div><p class="strOption"></p></div>
+			<div class="menuItem" name="Log" onclick="ui.onClickMenuItem(this, event)"><div class="imgLog"></div><p class="strLog"></p></div>
+			<div class="menuItem" name="Update" onclick="ui.onClickMenuItem(this, event)"><div class="imgUpdate"></div><p class="strUpdate"></p></div>
+		</div>
+		<div class="contextMenu">
+			<!--<div>Воспроизвести</div>
+			<div>Удалить</div>-->
+		</div>
+		<div class="list">
+			<!--<div><p>1</p></div>
+			<div class="select"><p>2</p></div>-->
+		</div>
+		<div class="progress"><progress id="melodyPercent" min="0" max="100"></progress></div>
+		<div class="waitPage show"><div></div></div>
+		<div class="message" onclick="ui.MessageClose.call(this, event)"><p></p></div>
+	</body>
+</html>

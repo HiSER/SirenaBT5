@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<CAMsetup>
+	<thisfile>D:\Desktop\PCB\SirenaBT-5.camset</thisfile>
+	<morelayertypes>
+	</morelayertypes>
+	<usecolors>
+		<mixer>0.000</mixer>
+		<object type="Plated H. In">00222222</object>
+		<object type="Plated H. Out">00000000</object>
+		<object type="Edge In">00172A00</object>
+		<object type="Edge Out">00172A00</object>
+		<object type="Volume">F3172A00</object>
+		<object type="Background">00FFFFFF</object>
+		<layer type="PasteMask">00CDCDCD</layer>
+		<layer type="Silkscreen">00D0D0D0</layer>
+		<layer type="SolderMask">E3182E00</layer>
+		<layer type="Copper">00AD8215</layer>
+		<layer type="Core">00000000</layer>
+		<layer type="Prepreg">00000000</layer>
+		<layer type="BoardOutline">00000000</layer>
+	</usecolors>
+	<boardlayers>
+		<layer type="SolderMask" H="10" Er="0.000" color="00004D00">
+			<filename>D:\Desktop\PCB\gerber\TopMask.gbr</filename>
+			<filedisp>TopMask.gbr</filedisp>
+		</layer>
+		<layer type="Copper" H="35" Negative="DefaultPositive" color="00800000">
+			<filename>D:\Desktop\PCB\gerber\Top.gbr</filename>
+			<filedisp>Top.gbr</filedisp>
+		</layer>
+		<layer type="Prepreg" H="200" Er="4.800">
+		</layer>
+		<layer type="Copper" H="35" Negative="DefaultPositive" color="004E7D9A">
+			<filename>D:\Desktop\PCB\gerber\Inner1.gbr</filename>
+			<filedisp>Inner1.gbr</filedisp>
+		</layer>
+		<layer type="Prepreg" H="500" Er="4.800">
+		</layer>
+		<layer type="Copper" H="35" Negative="DefaultPositive" color="00AE7AB8">
+			<filename>D:\Desktop\PCB\gerber\Inner2.gbr</filename>
+			<filedisp>Inner2.gbr</filedisp>
+		</layer>
+		<layer type="Prepreg" H="200" Er="4.800">
+		</layer>
+		<layer type="Copper" H="35" Negative="DefaultPositive" color="000000D0">
+			<filename>D:\Desktop\PCB\gerber\Bottom.gbr</filename>
+			<filedisp>Bottom.gbr</filedisp>
+		</layer>
+		<layer type="SolderMask" H="10" Er="0.000" color="00003709">
+			<filename>D:\Desktop\PCB\gerber\BottomMask.gbr</filename>
+			<filedisp>BottomMask.gbr</filedisp>
+		</layer>
+		<layer type="BoardOutline" H="1060">
+			<filename>D:\Desktop\PCB\gerber\BoardOutline.gbr</filename>
+			<filedisp>BoardOutline.gbr</filedisp>
+		</layer>
+	</boardlayers>
+
+	<boarddrillplates>
+		<drillplate from="top" to="btm" plated="yes">
+			<filename>D:\Desktop\PCB\drill\Through.drl</filename>
+			<filedisp>Through.drl</filedisp>
+		</drillplate>
+	</boarddrillplates>
+
+	<GerberSetup Incremental='no' OmitTrailingZeros='no' Milimeters='no' Len1='2' Len2='3'/>
+	<NCDSetup Guess='yes' Incremental='no' OmitTrailingZeros='no' Units='DefaultInch' Len1='2' Len2='3' Autooffset='yes'/>
+	<IPC356Setup AutoUnits='1' AutoMagnitude='1' LongPinID='yes' CpyFromDrill='yes' Autooffset='yes'/>
+	<BoardOutlineDrawing srctype='0' trackwidthMin='0.004' trackwidthSlopStart='0.01' trackwidthMetaTrsh='0.012'/>
+	<IdentifyOutline mode='0' removeoutside='yes' horizMargin='0' vertMargin='0' brushBlob='1' />
+</CAMsetup>
